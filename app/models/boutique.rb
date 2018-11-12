@@ -1,0 +1,2 @@
+class Boutique < ApplicationRecord
+end
