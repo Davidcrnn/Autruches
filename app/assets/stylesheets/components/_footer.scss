@@ -1,0 +1,46 @@
+.container-footer {
+  height: 400px;
+  width: 100%;
+  border: 3px solid black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $bleu;
+}
+
+
+.container-reseaux {
+  height: auto;
+  width: auto;
+  border: 2px solid red;
+}
+
+.container-navigation {
+  height: auto;
+  width: auto;
+  border: 2px solid red;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.container-contact {
+  height: auto;
+  width: auto;
+  border: 2px solid red;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+
+.container-informations {
+  height: auto;
+  width: auto;
+  border: 2px solid red;
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}

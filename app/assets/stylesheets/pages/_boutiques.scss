@@ -1,0 +1,55 @@
+// Google Map
+#mapCanvas {
+  width: 100%;
+  height: 300px;
+  border-radius: $border-radius;
+  margin: 40px 0 40px;
+}
+
+.container-boutique {
+  margin: 100px 60px 100px 60px;
+  border-radius: $border-radius;
+}
+
+.container-boutique-contact {
+  background-color: $bleu-clair;
+  border-radius: $border-radius;
+}
+.container-autruches {
+  width: 100%;
+  padding: 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-text-autruches ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style-type: none;
+  }
+}
+
+.container-text-autruches h3 {
+  text-decoration: underline;
+  font-size: 1.93em;
+}
+
+.photo-autruches {
+  height: 300px;
+  width: auto;
+  border-radius: $border-radius;
+}
+
+
+// Media Queries
+
+@media only screen and (max-width: 400px) {
+  .container-autruches {
+    flex-direction: column;
+  }
+  .container-text-autruches {
+    width: 100%;
+  }
+}

@@ -1,4 +1,47 @@
+<div class="container-boutique">
+  <div class="container-boutique-contact">
+    <div class="container-autruches">
+      <div class="container-text-autruches">
+        <h3>Les Autruches</h3>
+        <ul>
+          <li>30 rue Boulard</li>
+          <li>75014 Paris</li>
+          <li>01 45 44 44 44</li><br>
+          <li>Horaires:</li>
+          <li>Lundi au Vendredi: 9h-12h et 15h-19H</li>
+          <li>Samedi: 10h-17h</li>
+        </ul>
+      </div>
+      <div class="container-photo-autruches">
+        <%= image_tag "autruches.jpg", class: "photo-autruches" %>
+      </div>
+    </div>
+    <div class="container-autruches">
+      <div class="container-text-autruches">
+         <h3>Les petites autruches</h3>
+        <ul>
+          <li>33 rue Boulard</li>
+          <li>75014 Paris</li>
+          <li>01 45 45 45 45</li><br>
+          <li>Horaires:</li>
+          <li>Lundi au Vendredi: 9h-12h et 15h-19H</li>
+          <li>Samedi: 10h-17h</li>
+        </ul>
+      </div>
+      <div class="container-photo-autruches">
+        <%= image_tag "petites_autruches.jpg", class: "photo-autruches" %>
+      </div>
+    </div>
+  </div>
+
 <div id="mapCanvas"></div>
+</div>
+
+
+
+
+
+
 
 <script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}"></script>
 <script>
