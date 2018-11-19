@@ -1,9 +1,14 @@
 <div class="container-footer">
     <div class="container-reseaux">
-      <h3>Suivez nous !</h3>
+      <h3>SUIVEZ NOUS!</h3>
+      <div class="icon-container">
+        <p><%= image_tag 'facebook-logo-button.svg' %></p>
+        <p><%= image_tag 'instagram-logo.svg' %></p>
+
+      </div>
     </div>
     <div class="container-navigation">
-      <h3>Navigation</h3>
+      <h3>NAVIGATION</h3>
       <ul>
         <li>Tissus</li>
         <li>Mobilier</li>
@@ -13,8 +18,22 @@
         <li>Réalisations</li>
       </ul>
     </div>
+     <div class="container-navigation">
+      <h3>PRODUITS</h3>
+       <ul>
+      <li><%= link_to "Verrerie", '/' %></li>
+      <li><%= link_to "Table", '/'%></li>
+      <li><%= link_to "Textile", '/'%></li>
+      <li><%= link_to "Lifestyle", '/'%></li>
+      <li><%= link_to "Mobilier", '/'%></li>
+      <li><%= link_to "Luminaires", '/'%></li>
+      <li><%= link_to "Enfants", '/'%></li>
+      <li><%= link_to "Accessoires", '/'%></li>
+    </ul>
+    </div>
+
     <div class="container-contact">
-      <h3>Contactez nous</h3>
+      <h3>CONTACT</h3>
       <ul>
         <li>Les Autruches</li>
         <li>30 rue Boulard</li>
@@ -24,11 +43,15 @@
       </ul>
     </div>
     <div class="container-informations">
-      <h3>Informations</h3>
+      <h3>INFORMATIONS</h3>
       <ul>
         <li>Contact</li>
         <li>Mentions légales</li>
         <li>Admin</li>
       </ul>
     </div>
+</div>
+
+<div class="copyright">
+  <h1>Copyright ©Les Autruches- 2018</h1>
 </div>
