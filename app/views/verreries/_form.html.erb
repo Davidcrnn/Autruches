@@ -1,0 +1,28 @@
+<%= simple_form_for(@verrerie, :html => { multipart: true }) do |f| %>
+ <% if @verrerie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@verrerie.errors.count, "error") %> prohibited this verrerie from being saved:</h2>
+
+      <ul>
+      <% @verrerie.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container-form">
+    <div class="champs">
+      <%= f.input :titre %>
+      <%= f.input :description %>
+      <%= f.input :prix %>
+      <%= f.input :visible, as: :select %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+    <% end %>
+  </div>

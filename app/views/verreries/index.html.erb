@@ -1,0 +1,16 @@
+<div class="container-verrerie">
+  <h1>Verrerie</h1>
+  <div class="first-image verrerie-img">
+  </div>
+  </div>
+<div class="container-produits">
+  <% @verreries.each do |verrerie| %>
+  <div class="row">
+    <div class="col-xs-12 col-md-4 card">
+      <%= cl_image_tag verrerie.photo,height: 200, crop: :fill; %>
+    </div>
+  <% end %>
+  </div>
+
+</div>
+
