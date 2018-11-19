@@ -1,58 +1,50 @@
-<div class="navbar-wagon">
-  <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", class: 'logo' %>
-  <% end %>
-
-  <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
-      <!-- Links when logged in -->
-      <%= link_to "Boutiques", boutiques_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Contact", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-
-      <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
-        <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <% end %>
+<div class="nav-bar-container id="myHeader">
+  <div class="logo-container">
+    <%= image_tag "logo-lettre.png" %>
   </div>
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div>
-</div>
 
+  <div class="link-primary">
+    <ul>
+      <li><%= link_to "Accueil", '/'%></li>
+      <li><%= link_to "Boutiques", '/'%></li>
+      <li><%= link_to "Réalisations", '/'%></li>
+      <li><%= link_to "Presse", '/'%></li>
+      <li><%= link_to "Contact", '/'%></li>
+    </ul>
+  </div>
+
+  <div class="link-products">
+    <ul>
+      <li><%= link_to "Verrerie", '/', class: "cool-link"%></li>
+      <li><%= link_to "Table", '/', class: "cool-link"%></li>
+      <li><%= link_to "Textile", '/', class: "cool-link"%></li>
+      <li><%= link_to "Lifestyle", '/', class: "cool-link"%></li>
+      <li><%= link_to "Mobilier", '/', class: "cool-link"%></li>
+      <li><%= link_to "Luminaires", '/', class: "cool-link"%></li>
+      <li><%= link_to "Enfants", '/', class: "cool-link"%></li>
+      <li><%= link_to "Accessoires", '/', class: "cool-link"%></li>
+    </ul>
+  </div>
+  </div>
+
+
+<script>
+  // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("myHeader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>

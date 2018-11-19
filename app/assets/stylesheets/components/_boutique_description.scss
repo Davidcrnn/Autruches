@@ -1,0 +1,112 @@
+.produit-banner {
+  text-align: center;
+  text-transform: Uppercase;
+  h1 {
+    font-size: 25px;
+    margin: 20px;
+  }
+
+}
+.border {
+  height: 180px;
+  border: 10px solid white;
+  h1 {
+    font-size: 22px;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.content-container {
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  h1 {
+    margin: 0,
+  }
+}
+.container-produits {
+  margin: 50px 60px ;
+}
+
+.verrerie-img {
+  background-image: image-url('verrerie-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+.table-img {
+    background-image: image-url('table-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.textile-img {
+    background-image: image-url('textile-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.lifestyle-img {
+    background-image: image-url('lifestyle-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.mobilier-img {
+    background-image: image-url('mobilier-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.luminaire-img {
+    background-image: image-url('luminaire-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.enfants-img {
+    background-image: image-url('enfant-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+.accessoires-img {
+    background-image: image-url('accessoire-min.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+}
+
+hr.fancy-line {
+    border: 0;
+    height: 4px;
+
+}
+hr.fancy-line:before {
+    top: -0.5em;
+    height: 1em;
+}
+hr.fancy-line:after {
+    content:'';
+    height: 0.5em;
+    top: 1px;
+}
+
+hr.fancy-line:before, hr.fancy-line:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+}
+
+hr.fancy-line, hr.fancy-line:before {
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+}
+
