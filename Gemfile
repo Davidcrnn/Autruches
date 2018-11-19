@@ -8,9 +8,10 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.1.6'
 gem 'redis'
-#
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 gem 'geocoder'
-# gem 'gmaps4rails'
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'

@@ -7,8 +7,8 @@
   <div class="link-primary">
     <ul>
       <li><%= link_to "Accueil", '/'%></li>
-      <li><%= link_to "Boutiques", '/'%></li>
-      <li><%= link_to "Réalisations", '/'%></li>
+      <li><%= link_to "Boutiques", boutiques_path%></li>
+      <li><%= link_to "Réalisations", ''%></li>
       <li><%= link_to "Presse", '/'%></li>
       <li><%= link_to "Contact", '/'%></li>
     </ul>
@@ -16,7 +16,7 @@
 
   <div class="link-products">
     <ul>
-      <li><%= link_to "Verrerie", '/', class: "cool-link"%></li>
+      <li><%= link_to "Verrerie", verreries_path, class: "cool-link"%></li>
       <li><%= link_to "Table", '/', class: "cool-link"%></li>
       <li><%= link_to "Textile", '/', class: "cool-link"%></li>
       <li><%= link_to "Lifestyle", '/', class: "cool-link"%></li>
