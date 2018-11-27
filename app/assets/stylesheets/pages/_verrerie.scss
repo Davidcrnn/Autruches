@@ -8,10 +8,12 @@
   }
 }
 
-.card-item {
-
+.navigation {
+  padding-left: 3px;
+  a {
+    color:black;
+  }
 }
-
 .cursor {
   cursor:pointer;
   margin-bottom: 40px;
@@ -31,7 +33,7 @@
 
 .carte {
   border: 10px solid 0;
-  height: 300px;
+  height: 200px;
   background-size: cover;
   background-position: center;
   margin: 0;
@@ -57,19 +59,17 @@
 
 .titre-prix {
   text-align: center;
-  padding: 20px 0 25px 0;
+  padding: 20px 0 50px 0;
 }
 
-.link-cover {
+.link-cover  {
   color: black;
-  border: 2px solid #38406bdb;
+  border: 2px solid black;
   padding: 6px 20px;
-  border-radius: 8px;
   &:hover {
     text-decoration: none;
-    color: white;
-    background: #38406bdb;
-    border: none;
+    opacity: 0.6;
+    color: black;
   }
 }
 
@@ -82,5 +82,8 @@
     border: 0;
     padding: 0;
     height: 100px;
+  }
+  .nouveaute-container {
+    margin: 0;
   }
 }

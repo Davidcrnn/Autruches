@@ -6,17 +6,32 @@ class VerreriesController < ApplicationController
   end
 
   def show
-
+    @verreries = Verrerie.all
   end
 
   def new
     @verrerie = Verrerie.new
+    @picture = @verrerie.pictures.build
 
   end
 
   def create
     @verrerie = Verrerie.create!(verrerie_params)
-    redirect_to verreries_path
+    respond_to do |format|
+      if @verrerie.save
+        if params[:pictures]
+          params[:pictures].each do |picture|
+            @verrerie.pictures.create(picture: picture)
+          end
+        end
+
+        format.html { redirect_to @verrerie, notice: "Un nouvel objet vient d'être ajouté !" }
+        format.json { render action: 'show', status: :created, location: @verrerie }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @verrerie.errors, status: :unprocessable_entity }
+      end
+  end
   end
 
   def edit
@@ -24,13 +39,27 @@ class VerreriesController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @verrerie.update(verrerie_params)
+        if params[:pictures]
+          params[:pictures].each do |picture|
+            @verrerie.pictures.create(picture: picture)
+          end
+        end
 
+        format.html { redirect_to @verrerie, notice: 'verrerie was successfully created.' }
+        format.json { render :show, status: :ok, location: @verrerie }
+      else
+        format.html { render :edit }
+        format.json { render json: @verrerie.errors, status: :unprocessable_entity }
+      end
+  end
   end
 
   def destroy
 
     @verrerie.destroy
-    redirect_to verreries.path
+    redirect_to verreries_path
   end
 
   private
@@ -40,6 +69,6 @@ class VerreriesController < ApplicationController
   end
 
   def verrerie_params
-    params.require(:verrerie).permit(:titre, :description, :prix, :photo, :visible)
+    params.require(:verrerie).permit(:titre, :description, :prix, :photo, :visible, pictures_attributes: [:picture, :rental_id])
   end
 end
