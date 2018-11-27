@@ -1,17 +1,28 @@
-<!-- Place somewhere in the <body> of your page -->
+<div class="container-show">
+  <div class="navigation">
+    <p><%= link_to "Accueil", "/"  %> / <%= link_to "Verrerie", verreries_path  %> /<%= @verrerie.titre %></p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 div col-sm-12 col-md-6">
+      <!-- Place somewhere in the <body> of your page -->
 <div id="slider" class="flexslider">
-  <ul class="slides">
+  <ul class="slides slides-container">
     <li>
-      <img src="slide1.jpg" />
+      <% if @verrerie.pictures[0].present? %>
+
+      <img src="<%= cl_image_path @verrerie.pictures[0].picture_url(:verreries_image)%>">
+    </li>
+      <% end %>
+    <li>
+      <img src="<%= cl_image_path @verrerie.pictures[1].picture_url(:verreries_image)%>" />
     </li>
     <li>
-      <img src="slide2.jpg" />
+      <img src="<%= cl_image_path @verrerie.pictures[2].picture_url(:verreries_image)%>" />
     </li>
     <li>
-      <img src="slide3.jpg" />
-    </li>
-    <li>
-      <img src="slide4.jpg" />
+      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
+    </li>  <li>
+      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
     </li>
     <!-- items mirrored twice, total of 12 -->
   </ul>
@@ -19,33 +30,76 @@
 <div id="carousel" class="flexslider">
   <ul class="slides">
     <li>
-      <img src="slide1.jpg" />
+      <img src="<%= cl_image_path @verrerie.pictures[0].picture_url(:verreries_image)%>" />
     </li>
     <li>
-      <img src="slide2.jpg" />
+      <img src="<%= cl_image_path @verrerie.pictures[1].picture_url(:verreries_image)%>" />
     </li>
     <li>
-      <img src="slide3.jpg" />
+      <img src="<%= cl_image_path @verrerie.pictures[2].picture_url(:verreries_image)%>" />
     </li>
     <li>
-      <img src="slide4.jpg" />
+      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
+    </li> <li>
+      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
     </li>
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
 
-<script>
+    </div>
+    <div class="col-xs-12 div col-sm-12 col-md-4 show-description">
+        <h1><%= @verrerie.titre %></h1>
+        <h3><%= @verrerie.prix %>€</h3>
+        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assemble
+          <%= @verrerie.description %></p>
+        <div class="btn-dispo">
+          <%= link_to "Disponibilté", "/", class: "btn-dispo"  %>
 
-$(window).load(function() {
-  // The slider being synced must be initialized first
-  $('#carousel').flexslider({
+        </div>
+    </div>
+  </div>
+</div>
+<div class="nouveaute-container">
+  <div class="row">
+    <div class="col xs-12 center">
+      <hr class="fancy-line"><h1>AUTRES RECOMMANDATIONS</h1><hr class="fancy-line">
+    </div>
+  </div>
+    <div class="row center-card">
+      <% @verreries[0..2].each do |objet| %>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <div class="card-item">
+
+        <div class="carte" style="background-image: url('<%= cl_image_path objet.photo, height: 150, crop: :fill %>'">
+        </div>
+      <div class="titre-prix">
+      <h6><%= objet.titre.upcase %></h2>
+      <p><%= objet.prix %>€</p>
+
+      <%= link_to "Voir le produit", verrery_path(objet), class: "link-cover"  %>
+
+
+    </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#carousel').flexslider({
     animation: "slide",
     controlNav: false,
     animationLoop: false,
     slideshow: false,
-    itemWidth: 210,
+    itemWidth: 100,
     itemMargin: 5,
-    asNavFor: '#slider'
+    asNavFor: '#slider',
+    directionNav:false,
   });
 
   $('#slider').flexslider({
@@ -53,7 +107,8 @@ $(window).load(function() {
     controlNav: false,
     animationLoop: false,
     slideshow: false,
-    sync: "#carousel"
+    sync: "#carousel",
+    directionNav:false,
   });
-});
+  });
 </script>
