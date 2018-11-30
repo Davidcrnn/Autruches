@@ -1,12 +1,18 @@
 <div class="container-show">
+  <% if user_signed_in? %>
+  <div class="admin-link">
+    <p><%= link_to "NOUVEL OBJET", new_verrery_path  %> / <%= link_to "MODIFIER L'OBJET", edit_verrery_path(@verrerie)%> / <%= link_to "SUPPRIMER CET OBJET", verrery_path(@verrerie), :method => :delete %> </p>
+  </div>
+  <% end %>
   <div class="navigation">
-    <p><%= link_to "Accueil", "/"  %> / <%= link_to "Verrerie", verreries_path  %> /<%= @verrerie.titre %></p>
+    <p><%= link_to "ACCUEIL", "/"  %> / <%= link_to "VERRERIE", verreries_path  %> / <%= @verrerie.titre.upcase %></p>
   </div>
   <div class="row">
     <div class="col-xs-12 div col-sm-12 col-md-6">
       <!-- Place somewhere in the <body> of your page -->
 <div id="slider" class="flexslider">
   <ul class="slides slides-container">
+    <li><img src="<%= cl_image_path  @verrerie.photo, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
       <% if @verrerie.pictures[0].present? %>
 
@@ -14,35 +20,56 @@
     </li>
       <% end %>
     <li>
+      <% if @verrerie.pictures[1].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[1].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
     <li>
+      <% if @verrerie.pictures[2].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[2].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
     <li>
-      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
-    </li>  <li>
+      <% if @verrerie.pictures[3].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
+    <li>
+      <% if @verrerie.pictures[4].present? %>
+      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
+    </li>
+     <% end %>
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
 <div id="carousel" class="flexslider">
   <ul class="slides">
+    <li><img src="<%= cl_image_path  @verrerie.photo, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
+      <% if @verrerie.pictures[0].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[0].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
     <li>
+      <% if @verrerie.pictures[1].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[1].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
     <li>
+      <% if @verrerie.pictures[2].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[2].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
     <li>
-      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
-    </li> <li>
+      <% if @verrerie.pictures[3].present? %>
       <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
     </li>
+     <% end %>
+    <li>
+      <% if @verrerie.pictures[4].present? %>
+      <img src="<%= cl_image_path @verrerie.pictures[3].picture_url(:verreries_image)%>" />
+    </li>
+     <% end %>
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>

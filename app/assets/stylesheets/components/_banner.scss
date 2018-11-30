@@ -1,5 +1,5 @@
 .banner-container {
-  height: calc(100vh - 155px);
+  height: auto;
   width: 100%;
 }
 
@@ -34,7 +34,7 @@
   width: 100%;
   left: 0;
   top: 0;
-  height: calc(100vh - 155px);
+  height: calc(100vh - 125px);
   }
 
 .rslides li:first-child {

@@ -47,7 +47,7 @@ class VerreriesController < ApplicationController
           end
         end
 
-        format.html { redirect_to @verrerie, notice: 'verrerie was successfully created.' }
+        format.html { redirect_to @verrerie, notice: "Un objet vient d'être modifié." }
         format.json { render :show, status: :ok, location: @verrerie }
       else
         format.html { render :edit }
@@ -69,6 +69,6 @@ class VerreriesController < ApplicationController
   end
 
   def verrerie_params
-    params.require(:verrerie).permit(:titre, :description, :prix, :photo, :visible, pictures_attributes: [:picture, :rental_id])
+    params.require(:verrerie).permit(:titre, :description, :prix, :photo, :visible, :categorie, pictures_attributes: [:picture, :rental_id])
   end
 end
