@@ -14,12 +14,13 @@
   <div class="container-form">
     <div class="champs">
       <%= f.input :titre %>
-      <%= f.input :description %>
+      <%= f.input :description, label: 'DESCRIPTION' %>
       <%= f.input :prix %>
       <%= f.input :visible, as: :select %>
       <%= f.input :photo %>
       <%= f.input :photo_cache, as: :hidden %>
     </div>
+
 
    <%= f.fields_for :picture do |ff| %>
     <div class="field">
@@ -29,7 +30,19 @@
   <% end %>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.button :submit, 'Modifier' %>
     </div>
     <% end %>
+
+    <% if @verrerie.id %>
+    <div class="row">
+  <% @verrerie.pictures.each do |picture| %>
+      <div class="col-xs-12 col-md-3">
+    <%= image_tag picture.picture_url(:verreries_thumbnail) %><br>
+    <%= link_to "Supprimez", picture_path(picture), :method => :delete %><br>
+
+      </div>
+  <% end %>
+<% end %>
+    </div>
   </div>

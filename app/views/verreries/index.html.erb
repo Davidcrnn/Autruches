@@ -1,13 +1,17 @@
+<button onclick="topFunction()" class="scrollToTop" id="myBtn" title="Go to top"><%= image_tag "direction-arrow-top.svg"  %></button>
 
-<div class="image-verrerie navigation">
-  <p><%= link_to "Accueil", '/'  %> / Verrerie</p>
+<div class="image-verrerie navigation admin-link">
+  <% if user_signed_in? %>
+  <%= link_to "NOUVEL OBJET", new_verrery_path  %>
+  <% end %>
+  <p><%= link_to "ACCUEIL", '/'  %> / VERRERIE </p>
   <h1>VERRERIE</h1>
   <div class="first-image verrerie-img">
 
   </div>
   <div class="link-products cursor">
     <ul>
-      <li id="1">Tous les articles</li>
+      <li id="1">TOUS LES ARTICLES</li>
       <li id="2">VERRES</li>
       <li id="3">CARAFES</li>
       <li id="4">VASES</li>
@@ -15,6 +19,9 @@
   </div>
   <div id="div1"class="row">
       <% @verreries.each do |verre| %>
+      <% if verre.visible === true %>
+
+
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
@@ -27,10 +34,12 @@
     </div>
       </div>
       </div>
+      <% end %>
   <% end %>
   </div>
   <div id="div2"class="row">
       <% @verreries.each do |verre| %>
+      <% if verre.visible === true && verre.categorie === "Verre" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
@@ -43,10 +52,12 @@
     </div>
       </div>
       </div>
+  <% end %>
   <% end %>
   </div>
   <div id="div3"class="row">
       <% @verreries.each do |verre| %>
+       <% if verre.visible === true && verre.categorie === "Carafe" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
@@ -60,10 +71,11 @@
       </div>
       </div>
   <% end %>
+  <% end %>
   </div>
     <div id="div4"class="row">
       <% @verreries.each do |verre| %>
-      <% if verre.prix < 7 %>
+       <% if verre.visible === true && verre.categorie === "Vase" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
       <div class="card-item">
 
@@ -80,29 +92,6 @@
   <% end %>
   </div>
 </div>
-<script>
-  $(document).ready(function() {
-    $("#div2,#div3,#div4").css('display', 'none');
-
-  $("#1").on('click', function() {
-   $("#div1").fadeIn(1200,"swing");
-   $("#div2,#div3,#div4").fadeOut(1200,"swing");
-});
-$("#2").on('click', function() {
-   $("#div2").fadeIn(1200,"swing");
-   $("#div1,#div3,#div4").fadeOut(1200,"swing");
-});
-$("#3").on('click', function() {
-   $("#div3").fadeIn(1200,"swing");
-   $("#div1,#div2,#div4").fadeOut(1200,"swing");
-});
-$("#4").on('click', function() {
-   $("#div4").fadeIn(1200,"swing");
-   $("#div1,#div2,#div3").fadeOut(1200,"swing");
-});
 
 
-});
 
-
-</script>

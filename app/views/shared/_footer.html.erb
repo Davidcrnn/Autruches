@@ -1,27 +1,35 @@
 <div class="container-footer">
-    <div class="container-reseaux">
+  <div class="row">
+
+
+    <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
       <h3>SUIVEZ NOUS!</h3>
       <div class="icon-container">
-        <p><%= image_tag 'facebook-logo-button.svg' %></p>
-        <p><%= image_tag 'instagram-logo.svg' %></p>
+        <p><%= image_tag 'facebook.svg' %> <%= image_tag 'instagram (1).svg' %></p>
+
 
       </div>
     </div>
-    <div class="container-navigation">
+    <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation">
       <h3>NAVIGATION</h3>
       <ul>
-        <li>Tissus</li>
-        <li>Mobilier</li>
-        <li>Accessoires</li>
-        <li>Luminaires</li>
-        <li>Nos boutiques</li>
-        <li>Réalisations</li>
+        <li><%= link_to 'Accueil', '/'  %></li>
+        <li><%= link_to "Boutiques", boutiques_path %></li>
+        <li><%= link_to "Réalisations", '/' %></li>
+        <li><%= link_to "Contact", '/'  %></li>
+        <li><%= link_to "Mentions légales", '/'  %></li>
+        <% if user_signed_in? %>
+        <li><%= link_to "Déconnexion", destroy_user_session_path  %></li>
+        <% else %>
+        <li><%= link_to "Admin", new_user_session_path  %></li>
+
+        <% end %>
       </ul>
     </div>
-     <div class="container-navigation">
+     <div class="col-xs-12 col-sm-6 col-md-3 container-navigation">
       <h3>PRODUITS</h3>
        <ul>
-      <li><%= link_to "Verrerie", '/' %></li>
+      <li><%= link_to "Verrerie", verreries_path %></li>
       <li><%= link_to "Table", '/'%></li>
       <li><%= link_to "Textile", '/'%></li>
       <li><%= link_to "Lifestyle", '/'%></li>
@@ -32,7 +40,7 @@
     </ul>
     </div>
 
-    <div class="container-contact">
+    <div class=" col-xs-12 col-sm-6 col-md-3 container-navigation">
       <h3>CONTACT</h3>
       <ul>
         <li>Les Autruches</li>
@@ -42,14 +50,7 @@
         <li>lesautruches@gmail.com</li>
       </ul>
     </div>
-    <div class="container-informations">
-      <h3>INFORMATIONS</h3>
-      <ul>
-        <li>Contact</li>
-        <li>Mentions légales</li>
-        <li>Admin</li>
-      </ul>
-    </div>
+</div>
 </div>
 
 <div class="copyright">
