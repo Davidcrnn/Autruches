@@ -16,7 +16,7 @@
         <li><%= link_to 'Accueil', '/'  %></li>
         <li><%= link_to "Boutiques", boutiques_path %></li>
         <li><%= link_to "Réalisations", '/' %></li>
-        <li><%= link_to "Contact", '/'  %></li>
+        <li><%= link_to "Contact", new_contact_path  %></li>
         <li><%= link_to "Mentions légales", '/'  %></li>
         <% if user_signed_in? %>
         <li><%= link_to "Déconnexion", destroy_user_session_path  %></li>
@@ -36,6 +36,8 @@
       <li><%= link_to "Mobilier", '/'%></li>
       <li><%= link_to "Luminaires", '/'%></li>
       <li><%= link_to "Enfants", '/'%></li>
+      <li><%= link_to "Bijoux", '/'%></li>
+      <li><%= link_to "Maroquinerie", '/'%></li>
       <li><%= link_to "Accessoires", '/'%></li>
     </ul>
     </div>

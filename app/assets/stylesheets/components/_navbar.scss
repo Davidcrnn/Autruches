@@ -89,9 +89,18 @@
 }
 
 
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: white;
+  opacity: 0.7;
+}
 
+.btn-footer:hover {
+  background-color: white !important;
+}
 
-
+.btn-footer {
+background-color: white !important;
+}
 
 
 
