@@ -10,7 +10,7 @@
         <ul class="nav navbar-nav">
             <li><%= link_to "Accueil", '/'%></li>
         <li class="dropdown mega-dropdown active">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Produits</a>
+          <a href="#" class="dropdown-toggle btn-footer" data-toggle="dropdown">Produits</a>
         <div class="dropdown-menu mega-dropdown-menu">
           <div class="container-fluid">
            <!-- Tab panes -->
@@ -24,6 +24,8 @@
                     <li><%= link_to "Mobilier", '/', class: "cool-link"%></li>
                     <li><%= link_to "Luminaires", '/', class: "cool-link"%></li>
                     <li><%= link_to "Enfants", '/', class: "cool-link"%></li>
+                    <li><%= link_to "Bijoux", '/', class: "cool-link"%></li>
+                    <li><%= link_to "Maroquinerie", '/', class: "cool-link"%></li>
                     <li><%= link_to "Accessoires", '/', class: "cool-link"%></li>
                 </ul>
               </div>
@@ -34,9 +36,9 @@
         </div>
       </li>
       <li><%= link_to "Boutiques", boutiques_path%></li>
-      <li><%= link_to "Réalisations", ''%></li>
+      <li><%= link_to "Réalisations", '/'%></li>
       <li><%= link_to "Presse", '/'%></li>
-      <li><%= link_to "Contact", '/'%></li>
+      <li><%= link_to "Contact", new_contact_path%></li>
         </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

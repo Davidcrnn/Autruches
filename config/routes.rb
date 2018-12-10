@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pictures1/destroy'
+
   get 'pictures/destroy'
   get '/mentions-legales' => 'pages#mention'
 
@@ -11,5 +13,7 @@ Rails.application.routes.draw do
   resources :boutiques, only: [:index]
   resources :verreries
   resources :pictures, only: [:destroy]
+  resources :tables
+  resources :pictures1, only: [:destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
