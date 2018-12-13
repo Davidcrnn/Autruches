@@ -15,7 +15,7 @@
       <li id="4">VASES</li>
     </ul>
   </div>
-  <div id="div1"class="row">
+  <div id="l1"class="row">
       <% @verreries.each do |verre| %>
       <% if verre.visible === true %>
 
@@ -35,7 +35,7 @@
       <% end %>
   <% end %>
   </div>
-  <div id="div2"class="row">
+  <div id="l2"class="row">
       <% @verreries.each do |verre| %>
       <% if verre.visible === true && verre.categorie === "Verre" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -53,7 +53,7 @@
   <% end %>
   <% end %>
   </div>
-  <div id="div3"class="row">
+  <div id="l3"class="row">
       <% @verreries.each do |verre| %>
        <% if verre.visible === true && verre.categorie === "Carafe" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
@@ -71,7 +71,7 @@
   <% end %>
   <% end %>
   </div>
-    <div id="div4"class="row">
+    <div id="l4"class="row">
       <% @verreries.each do |verre| %>
        <% if verre.visible === true && verre.categorie === "Vase" %>
     <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">

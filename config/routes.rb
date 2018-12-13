@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'pictures1/destroy'
-
-  get 'pictures/destroy'
+  get 'tepictures/destroy'
+  get 'tpictures/destroy'
+  # get 'lpictures/destroy'
   get '/mentions-legales' => 'pages#mention'
 
   devise_for :users
@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   resources :verreries
   resources :pictures, only: [:destroy]
   resources :tables
-  resources :pictures1, only: [:destroy]
+  resources :tpictures, only: [:destroy]
+  resources :textiles
+  resources :tepictures, only: [:destroy]
+  resources :lyfestyles
+  resources :lpictures, only: [:destroy]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

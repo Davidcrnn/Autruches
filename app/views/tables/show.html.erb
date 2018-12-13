@@ -10,64 +10,64 @@
   <div class="row">
     <div class="col-xs-12 div col-sm-12 col-md-6">
       <!-- Place somewhere in the <body> of your page -->
-<div id="slider" class="flexslider">
+<div id="tslider" class="flexslider">
   <ul class="slides slides-container">
     <li><img src="<%= cl_image_path  @table.tphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
       <% if @table.tpictures[0].present? %>
 
-      <img src="<%= cl_image_path @table.tpictures[0].picture_url(:tables_image)%>">
+      <img src="<%= cl_image_path @table.tpictures[0].tpicture_url(:tables_image)%>">
     </li>
       <% end %>
     <li>
       <% if @table.tpictures[1].present? %>
-      <img src="<%= cl_image_path @table.tpictures[1].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[1].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[2].present? %>
-      <img src="<%= cl_image_path @table.tpictures[2].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[2].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[3].present? %>
-      <img src="<%= cl_image_path @table.tpictures[3].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[3].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[4].present? %>
-      <img src="<%= cl_image_path @table.tpictures[3].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[3].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <!-- items mirrored twice, total of 12 -->
   </ul>
 </div>
-<div id="carousel" class="flexslider">
+<div id="tcarousel" class="flexslider">
   <ul class="slides">
     <li><img src="<%= cl_image_path  @table.tphoto, height: 400, width: 600, crop: :fill%>" alt=""></li>
     <li>
       <% if @table.tpictures[0].present? %>
-      <img src="<%= cl_image_path @table.tpictures[0].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[0].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[1].present? %>
-      <img src="<%= cl_image_path @table.tpictures[1].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[1].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[2].present? %>
-      <img src="<%= cl_image_path @table.tpictures[2].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[2].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[3].present? %>
-      <img src="<%= cl_image_path @table.tpictures[3].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[3].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <li>
       <% if @table.tpictures[4].present? %>
-      <img src="<%= cl_image_path @table.tpictures[3].picture_url(:tables_image)%>" />
+      <img src="<%= cl_image_path @table.tpictures[3].tpicture_url(:tables_image)%>" />
     </li>
      <% end %>
     <!-- items mirrored twice, total of 12 -->
@@ -105,7 +105,7 @@
       <h6><%= objet.titre.upcase %></h2>
       <p><%= objet.prix %>€</p>
 
-      <%= link_to "Voir le produit", verrery_path(objet), class: "link-cover"  %>
+      <%= link_to "Voir le produit", table_path(objet), class: "link-cover"  %>
 
 
     </div>
@@ -118,23 +118,23 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#carousel').flexslider({
+    $('#tcarousel').flexslider({
     animation: "slide",
     controlNav: false,
     animationLoop: false,
     slideshow: false,
     itemWidth: 100,
     itemMargin: 5,
-    asNavFor: '#slider',
+    asNavFor: '#tslider',
     directionNav:false,
   });
 
-  $('#slider').flexslider({
+  $('#tslider').flexslider({
     animation: "slide",
     controlNav: false,
     animationLoop: false,
     slideshow: false,
-    sync: "#carousel",
+    sync: "#tcarousel",
     directionNav:false,
   });
   });
