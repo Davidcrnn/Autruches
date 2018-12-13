@@ -21,7 +21,7 @@ class TablesController < ApplicationController
       if @table.save
         if params[:tpictures]
           params[:tpictures].each do |tpicture|
-            @table.tpictures.create(tpicture: picture)
+            @table.tpictures.create(tpicture: tpicture)
           end
         end
 
@@ -40,10 +40,10 @@ class TablesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @table.update(verrerie_params)
+      if @table.update(table_params)
         if params[:tpictures]
           params[:tpictures].each do |tpicture|
-            @table.tpictures.create(tpicture: picture)
+            @table.tpictures.create(tpicture: tpicture)
           end
         end
 
@@ -69,7 +69,7 @@ class TablesController < ApplicationController
   end
 
   def table_params
-    params.require(:table).permit(:titre, :description, :prix, :tphoto, :visible, :categorie, pictures_attributes: [:tpictures, :table_id])
+    params.require(:table).permit(:titre, :description, :prix, :tphoto, :visible, :categorie, tpictures_attributes: [:tpicture, :table_id])
   end
 end
 

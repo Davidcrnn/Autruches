@@ -69,6 +69,6 @@ class VerreriesController < ApplicationController
   end
 
   def verrerie_params
-    params.require(:verrerie).permit(:titre, :description, :prix, :photo, :visible, :categorie, pictures_attributes: [:picture, :verrerie_id])
+    params.require(:verrerie).permit(:titre, :description, :prix, :photo, :visible, :categorie, art_attributes: [:picture, :verrerie_id])
   end
 end
